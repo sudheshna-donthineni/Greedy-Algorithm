@@ -1,0 +1,18 @@
+class Solution:
+    def findContentChildren(self, g, s):
+        """
+        :type g: List[int]
+        :type s: List[int]
+        :rtype: int
+        """
+        g.sort()
+        s.sort()
+        cookie, child = 0,0
+        while cookie < len(s) and child < len(g):
+            if s[cookie] >= g[child]:
+                child += 1
+            cookie+=1
+        return child
+    
+Time : O(NlgN)
+Space :O(1)
